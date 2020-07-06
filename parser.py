@@ -87,7 +87,6 @@ elif marka == 2:
 		print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
 		return
 	def parse():
-		urls = open('file.txt', 'r').read()
 		html = get_html(urls)
 		try:
 			get_content(html.text)
