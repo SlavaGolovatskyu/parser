@@ -25,11 +25,8 @@ if marka == 1:
 	elif li == 8:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/?page=8&show_in_search=1&markaId=70'
 	def get_html(url):
-		try:
-			r = requests.get(urls, headers = Headers)
-			return r
-		except NameError:
-			print('Ошибка. Данной страницы нету.')
+		r = requests.get(urls, headers = Headers)
+		return r
 	def get_content(html):
 		soup = BeautifulSoup(html, 'html.parser')
 		items = soup.find_all('div', class_ = 'proposition_area')
@@ -44,11 +41,11 @@ if marka == 1:
 		print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
 		return
 	def parse():
-		html = get_html(urls)
 		try:
+			html = get_html(urls)
 			get_content(html.text)
-		except AttributeError:
-			print('Вы указали неверную страницу.')
+		except NameError:
+			print('Ошибка. Данной страницы нету.' + '\n' + 'Вы указали неверную страницу.')
 	parse()
 elif marka == 2:
 	if li == 1:
@@ -68,11 +65,8 @@ elif marka == 2:
 	elif li == 8:
 		urls = 'https://auto.ria.com/legkovie/jeep/?page=8'
 	def get_html(url):
-		try:
-			r = requests.get(urls, headers = Headers)
-			return r
-		except NameError:
-			print('Ошибка. Данной страницы нету.')
+		r = requests.get(urls, headers = Headers)
+		return r
 	def get_content(html):
 		soup = BeautifulSoup(html, 'html.parser')
 		items = soup.find_all('div', class_ = 'content')
@@ -87,11 +81,11 @@ elif marka == 2:
 		print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
 		return
 	def parse():
-		html = get_html(urls)
 		try:
+			html = get_html(urls)
 			get_content(html.text)
-		except AttributeError:
-			print('Вы указали неверную страницу.')
+		except NameError:
+			print('Ошибка. Данной страницы нету.' + '\n' + 'Вы указали неверную страницу.')
 	parse()
 else:
 	print('Указана неверная марка машины')
