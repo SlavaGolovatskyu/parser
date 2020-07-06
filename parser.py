@@ -10,36 +10,20 @@ print('Вы указали страницу: ' + str(li) + ' Начинаю ра
 if marka == 1:
 	if li == 1:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 2:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/?page=2&show_in_search=1&markaId=70'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 3:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/?page=3&show_in_search=1&markaId=70'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 4:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/?page=4&show_in_search=1&markaId=70'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 5:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/?page=5&show_in_search=1&markaId=70'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 6:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/?page=6&show_in_search=1&markaId=70'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 7:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/?page=7&show_in_search=1&markaId=70'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 8:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/?page=8&show_in_search=1&markaId=70'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	def get_html(url):
 		try:
 			r = requests.get(urls, headers = Headers)
@@ -60,7 +44,6 @@ if marka == 1:
 		print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
 		return
 	def parse():
-		urls = open('file.txt', 'r').read()
 		html = get_html(urls)
 		try:
 			get_content(html.text)
@@ -70,36 +53,20 @@ if marka == 1:
 elif marka == 2:
 	if li == 1:
 		urls = 'https://auto.ria.com/legkovie/jeep/'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 2:
 		urls = 'https://auto.ria.com/legkovie/jeep/?page=2'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 3:
 		urls = 'https://auto.ria.com/legkovie/jeep/?page=3'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 4:
 		urls = 'https://auto.ria.com/legkovie/jeep/?page=4'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 5:
 		urls = 'https://auto.ria.com/legkovie/jeep/?page=5'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 6:
 		urls = 'https://auto.ria.com/legkovie/jeep/?page=6'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 7:
 		urls = 'https://auto.ria.com/legkovie/jeep/?page=7'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	elif li == 8:
 		urls = 'https://auto.ria.com/legkovie/jeep/?page=8'
-		with open('file.txt', 'w') as f:
-			f.write(urls)
 	def get_html(url):
 		try:
 			r = requests.get(urls, headers = Headers)
