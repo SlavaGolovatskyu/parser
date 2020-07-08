@@ -11,8 +11,6 @@ if marka == 1:
 	urls = 'https://auto.ria.com/newauto/marka-skoda/?page=' + str(li) + '&show_in_search=1&markaId=70'
 	if li == 1:
 		urls = 'https://auto.ria.com/newauto/marka-skoda/'
-	elif li >= 12:
-		print('Такой страницы нету.')
 	def get_html(url):
 		r = requests.get(urls, headers = Headers)
 		return r
@@ -27,8 +25,11 @@ if marka == 1:
 				'Місто': item.find('div', class_ = 'proposition_region grey size13').find_next('strong').get_text(),
 				'Адрес для пошуку': HOST + item.find('div', class_ = 'proposition_title').find_next('a').get('href')
 				})
-		print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
-		return
+		if cars == []:
+			print('Ошибка. Данной страницы нету.\nВы указали неверный номер страницы')
+		else:
+			print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
+			return
 	def parse():
 		try:
 			html = get_html(urls)
@@ -42,8 +43,6 @@ elif marka == 2:
 	urls = 'https://auto.ria.com/legkovie/jeep/?page=' + str(li)
 	if li == 1:
 		urls = 'https://auto.ria.com/legkovie/jeep/'
-	elif li > 107:
-		print('Такой страницы нету.')
 	def get_html(url):
 		r = requests.get(urls, headers = Headers)
 		return r
@@ -58,8 +57,11 @@ elif marka == 2:
 				'Місто': item.find('li', class_ = 'item-char view-location').get_text(),
 				'Адрес для пошуку': item.find('a', class_ = 'address').get('href')
 				})
-		print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
-		return
+		if cars == []:
+			print('Ошибка. Данной страницы нету.\nВы указали неверный номер страницы')
+		else:
+			print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
+			return
 	def parse():
 		try:
 			html = get_html(urls)
@@ -71,8 +73,6 @@ elif marka == 3:
 	li = int(input('Укажите страницу для парсинга. Всего есть 12 страниц. Укажите цифру от 1 к 12  --->'))
 	print('Вы указали страницу: ' + str(li) + ' Начинаю работу.' + '\n' + '\n')
 	urls = 'https://auto.ria.com/newauto/marka-bmw/?page=' + str(li) + '&show_in_search=1&markaId=9'
-	if li > 12:
-		print('Данной страницы нету.')
 	def get_html(url):
 		r = requests.get(urls, headers = Headers)
 		return r
@@ -87,8 +87,11 @@ elif marka == 3:
 				'Місто': item.find('div', class_ = 'proposition_region grey size13').find_next('strong').get_text(),
 				'Адрес для пошуку': HOST + item.find('div', class_ = 'proposition_title').find_next('a').get('href')
 				})
-		print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
-		return
+		if cars == []:
+			print('Ошибка. Данной страницы нету.\nВы указали неверный номер страницы')
+		else:
+			print(str(cars) + '\n' + '\n' + 'Работа завершена успешно.')
+			return
 	def parse():
 		try:
 			html = get_html(urls)
